@@ -3,6 +3,20 @@
 В качестве бд использовалась PostegreSQL.
 Развернуто в докер контейнере вместе с бд, которая недоступна снаружи контейнера.
 
+Схема бд: 
+
+                            Table "public.socks"
+       Column   |          Type          | Collation | Nullable | Default
+    ------------+------------------------+-----------+----------+---------
+     color      | character varying(255) |           | not null |
+     cottonpart | integer                |           | not null |
+     quantity   | integer                |           | not null |
+    Indexes:
+        "socks_pkey" PRIMARY KEY, btree (color, cottonpart)
+    Check constraints:
+        "socks_cottonpart_check" CHECK (cottonpart >= 0 AND cottonpart <= 100)
+    
+    
 API:
 
   Возвращает общее количество носков на складе, соответствующих переданным в параметрах критериям запроса.
