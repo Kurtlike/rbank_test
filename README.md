@@ -15,6 +15,8 @@
         "socks_pkey" PRIMARY KEY, btree (color, cottonpart)
     Check constraints:
         "socks_cottonpart_check" CHECK (cottonpart >= 0 AND cottonpart <= 100)
+        
+ В текущий момент схема пустая.
     
     
 API:
